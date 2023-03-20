@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { Card } from "../components/Card";
 import { getProducts } from "../helpers/Products";
 import { useApi } from "../hooks/useApi";
 
@@ -11,7 +11,7 @@ export const Home = () => {
       <div>Home</div>
       {loading
         ? "cargando"
-        : data.map((product) => <p key={product.id}>{product.title}</p>)}
+        : data.map((product) => <Card key={product.id} product={...product} />)}
     </>
   );
 };
