@@ -5,3 +5,19 @@
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
 }
+
+#root {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  row-gap: 20px;
+}
+
+main {
+  width: 90vw;
+  margin: 0 auto;
+}
+
+.swiper-wrapper{
+  column-gap: 30px;
+}

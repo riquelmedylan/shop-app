@@ -1,6 +1,6 @@
 import style from "@/styles/modules/card.module.css";
-export const Card = (product) => {
-  const { price, images, category, description } = product.product;
+export const Card = ({product}) => {
+  const { price, images, category, description } = product;
   return (
     <div className={style.card}>
       <header className={style.cardImage}>
@@ -12,7 +12,7 @@ export const Card = (product) => {
       </div>
       <footer className={style.cardFooter}>
         <span className={style.price}>${price}</span>
-        <button className={style.btnBuy}>Comprar</button>
+        <button className={style.btnBuy}>Buy</button>
       </footer>
     </div>
   );

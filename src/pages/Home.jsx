@@ -1,17 +1,22 @@
-import { Card } from "../components/Card";
-import { getProducts } from "../helpers/Products";
+import "swiper/css";
+import style from "@/styles/pages/home.module.css"
 import { useApi } from "../hooks/useApi";
+import { getProducts } from "../helpers/Products";
+import { Spinner } from "../components/Spinner";
+import { SwiperContainer } from "../components/SwiperContainer";
 
 export const Home = () => {
   const { data, loading } = useApi(getProducts);
 
-  console.log(data);
   return (
-    <>
-      <div>Home</div>
-      {loading
-        ? "cargando"
-        : data.map((product) => <Card key={product.id} product={...product} />)}
-    </>
+    <main>
+      <section className={style.carrousel}>
+        {loading ? (
+          <Spinner />
+        ) : (
+          <SwiperContainer data={data}/>
+        )}
+      </section>
+    </main>
   );
 };

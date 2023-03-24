@@ -4,6 +4,9 @@
   border: 1px solid #ccc;
   border-radius: 8px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .cardImage {
