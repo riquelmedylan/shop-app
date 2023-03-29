@@ -19,9 +19,9 @@ const breakpoints = {
   },
 };
 
-export const SwiperContainer = ({ data }) => {
+export const SwiperContainer = ({ data, space }) => {
   return (
-    <Swiper breakpoints={breakpoints} spaceBetween={30}>
+    <Swiper breakpoints={breakpoints} spaceBetween={space}>
       {data.map((product) => (
         <SwiperSlide key={product.id}>
           <Card product={product} />

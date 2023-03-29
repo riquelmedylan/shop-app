@@ -1,0 +1,52 @@
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    padding: 60px 30px;
+    background-color: rgb(14, 14, 14);
+    width: 0;
+    height: 100vh;
+    position: fixed;
+    z-index: 10;
+    bottom: 0;
+    right: 0;
+    transition: width 0.5s ease;
+    row-gap: 15px;
+}
+
+.sidebar a{
+    font-size: 24px;
+    text-decoration: none;
+    color: white;
+}
+
+.sidebar a:hover{
+    color: rgb(202, 202, 202);
+}
+
+.opacity{
+    background-color: rgba(0, 0, 0, 0.397);
+    width: 0;
+    height: 100vh;
+    position: fixed;
+    z-index: 5;
+    bottom: 0;
+    right: 0;
+    transition: width 0.1s ease;
+}
+
+.opacityBg{
+    width: 100vh;
+
+}
+
+.show{
+    width: 256px;
+}
+
+.close{
+    position: absolute;
+    right: 5%;
+    top: 20px;
+    z-index: 20;
+
+}

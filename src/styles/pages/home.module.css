@@ -1,6 +1,24 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+}
+
 .carrousel {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 450px;
+}
+
+.categories{
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+}
+
+@media (min-width: 690px) {
+    .categories{
+        padding: 0 30px;
+    } 
 }
