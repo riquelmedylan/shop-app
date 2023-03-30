@@ -1,7 +1,9 @@
+import { lazy } from "react";
 import { Outlet } from "react-router-dom";
-import { Header } from "./header/Header";
 
-export const Layout = () => {
+const Header = lazy(() => import( "./header/Header"));
+
+export default function Layout(){
   return (
     <>
       <Header />

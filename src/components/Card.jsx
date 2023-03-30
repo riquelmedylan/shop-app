@@ -1,5 +1,5 @@
 import style from "@/styles/modules/card.module.css";
-export const Card = ({product}) => {
+export default function Card({ product }) {
   const { price, images, category, description } = product;
   return (
     <div className={style.card}>
@@ -16,4 +16,4 @@ export const Card = ({product}) => {
       </footer>
     </div>
   );
-};
+}

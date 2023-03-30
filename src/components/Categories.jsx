@@ -1,10 +1,11 @@
 import style from "@/styles/modules/categories.module.css";
+import { lazy } from "react";
 import { getCategories } from "../helpers/Categories";
 import { useApi } from "../hooks/useApi";
-import { Spinner } from "./Spinner";
-import { SwiperContainer } from "./SwiperContainer";
+const Spinner = lazy(() => import("./Spinner"));
+const SwiperContainer = lazy(() => import("./SwiperContainer"));
 
-export const Categories = () => {
+export default function Categories() {
   const { data, loading } = useApi(getCategories);
   return (
     <>
@@ -22,4 +23,4 @@ export const Categories = () => {
       )}
     </>
   );
-};
+}

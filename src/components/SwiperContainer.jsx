@@ -1,5 +1,6 @@
+import { lazy } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Card } from "@/components/Card.jsx";
+const Card = lazy(() => import("@/components/Card.jsx"));
 
 const breakpoints = {
   300: {
@@ -19,7 +20,7 @@ const breakpoints = {
   },
 };
 
-export const SwiperContainer = ({ data, space }) => {
+export default function SwiperContainer({ data, space }) {
   return (
     <Swiper breakpoints={breakpoints} spaceBetween={space}>
       {data.map((product) => (
@@ -29,4 +30,4 @@ export const SwiperContainer = ({ data, space }) => {
       ))}
     </Swiper>
   );
-};
+}

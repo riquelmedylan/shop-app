@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { IconX } from "@tabler/icons-react";
 
-export const Sidebar = ({ showState }) => {
+export default function Sidebar({ showState }) {
   const [show, setShow] = useState(false);
   setTimeout(() => setShow(true), 1);
 
@@ -18,7 +18,12 @@ export const Sidebar = ({ showState }) => {
         onClick={unmountSidebar}
         className={`${style.opacity} ${show ? style.opacityBg : ""}`}
       ></div>
-      <IconX className={style.close} onClick={unmountSidebar} color="white" size={32} />
+      <IconX
+        className={style.close}
+        onClick={unmountSidebar}
+        color="white"
+        size={32}
+      />
       <aside className={`${style.sidebar} ${show ? style.show : ""}`}>
         <Link>Categories</Link>
         <Link>Products</Link>
@@ -27,4 +32,4 @@ export const Sidebar = ({ showState }) => {
       </aside>
     </>
   );
-};
+}

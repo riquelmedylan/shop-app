@@ -1,12 +1,13 @@
 import "swiper/css";
+import { lazy } from "react";
 import style from "@/styles/pages/home.module.css";
 import { useApi } from "../hooks/useApi";
 import { getProducts } from "../helpers/Products";
-import { Spinner } from "../components/Spinner";
-import { SwiperContainer } from "../components/SwiperContainer";
-import { Categories } from "../components/Categories";
+const Spinner = lazy(() => import("../components/Spinner"));
+const SwiperContainer = lazy(() => import("../components/SwiperContainer"));
+const Categories = lazy(() => import("../components/Categories"));
 
-export const Home = () => {
+export default function Home() {
   const { data, loading } = useApi(getProducts);
 
   return (
@@ -21,4 +22,4 @@ export const Home = () => {
       </section>
     </main>
   );
-};
+}
