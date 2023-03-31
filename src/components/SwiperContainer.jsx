@@ -1,6 +1,5 @@
-import { lazy } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-const Card = lazy(() => import("@/components/Card.jsx"));
+import { Card } from "./Card";
 
 const breakpoints = {
   300: {
@@ -9,10 +8,10 @@ const breakpoints = {
   480: {
     slidesPerView: 2,
   },
-  750: {
+  800: {
     slidesPerView: 3,
   },
-  1000: {
+  1140: {
     slidesPerView: 4,
   },
   1440: {

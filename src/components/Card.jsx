@@ -1,6 +1,8 @@
 import style from "@/styles/modules/card.module.css";
-export default function Card({ product }) {
-  const { price, images, category, description } = product;
+import { Link } from "react-router-dom";
+
+export const Card = ({ product }) => {
+  const { price, images, category, description, id } = product;
   return (
     <div className={style.card}>
       <header className={style.cardImage}>
@@ -12,8 +14,10 @@ export default function Card({ product }) {
       </div>
       <footer className={style.cardFooter}>
         <span className={style.price}>${price}</span>
-        <button className={style.btnBuy}>Buy</button>
+        <Link to={`product/${id}`} className={style.btnBuy}>
+          Buy
+        </Link>
       </footer>
     </div>
   );
-}
+};

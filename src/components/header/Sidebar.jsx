@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { IconX } from "@tabler/icons-react";
 
-export default function Sidebar({ showState }) {
+export const Sidebar = ({ showState }) => {
   const [show, setShow] = useState(false);
   setTimeout(() => setShow(true), 1);
 
@@ -32,4 +32,4 @@ export default function Sidebar({ showState }) {
       </aside>
     </>
   );
-}
+};

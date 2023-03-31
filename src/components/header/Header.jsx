@@ -1,7 +1,7 @@
 import style from "@/styles/modules/header/header.module.css";
 import { useState, lazy } from "react";
+import { Sidebar } from "./Sidebar";
 const Navbar = lazy(() => import("./Navbar"));
-const Sidebar = lazy(() => import("./Sidebar"));
 
 export default function Header() {
   const [show, setShow] = useState(false);

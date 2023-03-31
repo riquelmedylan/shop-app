@@ -10,9 +10,7 @@ export default function Categories() {
   return (
     <>
       {loading ? (
-        <div className={style.spinner}>
           <Spinner />
-        </div>
       ) : (
         data.map((dat, i) => (
           <div key={i}>
