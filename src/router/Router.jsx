@@ -10,18 +10,18 @@ export const Router = createBrowserRouter([
     path: "/",
     element: (
       <Suspense fallback={<Spinner />}>
-        <Layout />,
+        <Layout />
       </Suspense>
     ),
     children: [
       {
         index: true,
-        element: <Home />,
+        element: <Home />
       },
       {
         path: "/product/:id",
-        element: <Product />,
+        element: <Product />
       },
-    ],
+    ]
   },
 ]);

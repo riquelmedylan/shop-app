@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-export const useApi = (cb) => {
+export const useApi = (cb,param) => {
   const isMounted = useRef(true);
   const [data, setData] = useState({
     data: [],
@@ -14,7 +14,7 @@ export const useApi = (cb) => {
   }, []);
 
   useEffect(() => {
-    cb().then((data) => {
+    cb(param && param).then((data) => {
       setData({
         data: data,
         loading: false,
