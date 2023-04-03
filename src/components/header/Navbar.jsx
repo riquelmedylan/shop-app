@@ -1,8 +1,12 @@
 import style from "@/styles/modules/header/navbar.module.css";
 import { IconSearch, IconMenu } from "@tabler/icons-react";
 import { Link } from "react-router-dom";
+import { lazy, useState } from "react";
+const Sidebar = lazy(() => import("./Sidebar"));
 
-export default function Navbar({ setShow, show }) {
+
+export default function Navbar() {
+  const [show, setShow] = useState(false);
   const handleShowSidebar = () => {
     setShow(!show);
   };
@@ -13,7 +17,7 @@ export default function Navbar({ setShow, show }) {
         <IconSearch color="white" size={16} />
       </div>
       <div className={style.listLinks}>
-        <Link>Categories</Link>
+        <Link to="/categories">Categories</Link>
         <Link>Products</Link>
         <Link>Log In</Link>
         <Link>Sign In</Link>
@@ -24,6 +28,7 @@ export default function Navbar({ setShow, show }) {
         color="white"
         size={32}
       />
+      {<Sidebar show={show} setShow={setShow} />}
     </nav>
   );
 }

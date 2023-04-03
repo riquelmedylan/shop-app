@@ -1,0 +1,19 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+}
+
+.containerCards{
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+}
+
+@media (min-width: 620px) {
+    .containerCards{
+        flex-direction: row;
+        flex-wrap: wrap;
+        column-gap: 50px;
+    }
+}

@@ -1,35 +1,33 @@
 import style from "@/styles/modules/header/sidebar.module.css";
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { IconX } from "@tabler/icons-react";
 
-export const Sidebar = ({ showState }) => {
-  const [show, setShow] = useState(false);
-  setTimeout(() => setShow(true), 1);
-
+export default function Sidebar({ show, setShow }) {
   const unmountSidebar = () => {
     setShow(false);
-    showState(false);
   };
 
   return (
     <>
       <div
         onClick={unmountSidebar}
-        className={`${style.opacity} ${show ? style.opacityBg : ""}`}
-      ></div>
-      <IconX
-        className={style.close}
-        onClick={unmountSidebar}
-        color="white"
-        size={32}
-      />
-      <aside className={`${style.sidebar} ${show ? style.show : ""}`}>
-        <Link>Categories</Link>
-        <Link>Products</Link>
-        <Link>Log In</Link>
-        <Link>Sign In</Link>
-      </aside>
+        className={`${style.opacity} ${show ? style.show : style.notShow}`}
+      >
+        <IconX
+          className={`${style.close} `}
+          onClick={unmountSidebar}
+          color="white"
+          size={32}
+        />
+        <aside className={`${style.sidebar}`}>
+          <Link onClick={unmountSidebar} to="/categories">
+            Categories
+          </Link>
+          <Link>Products</Link>
+          <Link>Log In</Link>
+          <Link>Sign In</Link>
+        </aside>
+      </div>
     </>
   );
-};
+}

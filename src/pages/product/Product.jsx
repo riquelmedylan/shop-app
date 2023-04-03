@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { getProduct } from "../../helpers/Products";
 import { useApi } from "../../hooks/useApi";
 import { ImagesCarrousel } from "./ImagesCarrousel";
-import Spinner from "../Spinner";
+import Spinner from "../../components/Spinner";
 
 export default function Product() {
   const { id } = useParams();

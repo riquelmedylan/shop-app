@@ -1,18 +1,17 @@
 import style from "@/styles/modules/header/header.module.css";
-import { useState, lazy } from "react";
-import { Sidebar } from "./Sidebar";
+import { lazy } from "react";
+import { Link } from "react-router-dom";
 const Navbar = lazy(() => import("./Navbar"));
 
 export default function Header() {
-  const [show, setShow] = useState(false);
-
   return (
     <>
       <header className={style.header}>
-        <h2>Shop-App</h2>
-        <Navbar setShow={setShow} show={show} />
+        <Link to="/" className={style.title}>
+          <h2>Shop-App</h2>
+        </Link>
+        <Navbar />
       </header>
-      {show ? <Sidebar showState={setShow} /> : null}
     </>
   );
 }

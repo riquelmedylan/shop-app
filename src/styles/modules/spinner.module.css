@@ -1,4 +1,4 @@
-.spinnerContainer{
+.spinnerContainer {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11,6 +11,11 @@
   height: 36px;
   animation: spin 1s linear infinite;
   border-radius: 100%;
+}
+
+.screenComplete {
+  width: 100vw;
+  height: 100vh;
 }
 
 @keyframes spin {
