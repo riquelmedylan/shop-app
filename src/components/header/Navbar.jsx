@@ -28,7 +28,7 @@ export default function Navbar() {
         color="white"
         size={32}
       />
-      {<Sidebar show={show} setShow={setShow} />}
+      <Sidebar show={show} setShow={setShow} />
     </nav>
   );
 }

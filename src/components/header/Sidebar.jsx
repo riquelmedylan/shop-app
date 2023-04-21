@@ -11,23 +11,22 @@ export default function Sidebar({ show, setShow }) {
     <>
       <div
         onClick={unmountSidebar}
-        className={`${style.opacity} ${show ? style.show : style.notShow}`}
-      >
+        className={`${style.opacity} ${show && style.show}`}
+      ></div>
+      <aside className={`${style.sidebar}  ${show && style.show}`}>
         <IconX
           className={`${style.close} `}
           onClick={unmountSidebar}
           color="white"
           size={32}
         />
-        <aside className={`${style.sidebar}`}>
-          <Link onClick={unmountSidebar} to="/categories">
-            Categories
-          </Link>
-          <Link>Products</Link>
-          <Link>Log In</Link>
-          <Link>Sign In</Link>
-        </aside>
-      </div>
+        <Link onClick={unmountSidebar} to="/categories">
+          Categories
+        </Link>
+        <Link>Products</Link>
+        <Link>Log In</Link>
+        <Link>Sign In</Link>
+      </aside>
     </>
   );
 }
