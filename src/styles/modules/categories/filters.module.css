@@ -1,0 +1,14 @@
+.containerFilters {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .08);
+    display: flex;
+    width: 100px;
+    padding: 5px 10px;
+    border-radius: 8px;
+    column-gap: 12px;
+}
+
+@media (min-width: 690px) {
+    .containerFilters {
+      display: none;
+    }
+}

@@ -1,0 +1,15 @@
+.containerPrice {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+}
+
+.price{
+    display: flex;
+    column-gap: 5px;
+}
+
+input {
+  accent-color: #ffba08;
+}

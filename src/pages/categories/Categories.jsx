@@ -5,7 +5,7 @@ import { getCategories } from "../../helpers/Categories";
 import { useApi } from "../../hooks/useApi";
 import { useEffect } from "react";
 const Spinner = lazy(() => import("@/components/Spinner"));
-const Filters = lazy(() => import("@/pages/categories/Filters"));
+const Filters = lazy(() => import("@/components/categories/Filters"));
 
 export default function CategoriesPage() {
   const hookApi = useApi(getCategories);

@@ -12,10 +12,10 @@ export default function Categories() {
       {loading ? (
           <Spinner />
       ) : (
-        data.map((dat, i) => (
+        data.map((information, i) => (
           <div key={i}>
-            <h3 className={style.titleCategory}>{dat.category}</h3>
-            <SwiperContainer data={dat.data} space={90} />
+            <h3 className={style.titleCategory}>{information.category}</h3>
+            <SwiperContainer data={information.data} space={90} />
           </div>
         ))
       )}
