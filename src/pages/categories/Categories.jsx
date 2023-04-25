@@ -4,22 +4,19 @@ import { Card } from "../../components/Card";
 import { getCategories } from "../../helpers/Categories";
 import { useApi } from "../../hooks/useApi";
 import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import useCategories from "../../hooks/useCategories";
+
 const Spinner = lazy(() => import("@/components/Spinner"));
 const Filters = lazy(() => import("@/components/categories/Filters"));
 
 export default function CategoriesPage() {
-  const hookApi = useApi(getCategories);
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    setTimeout(() => {
-      setData(hookApi.data);
-    }, 500);
-    return () => setData([]);
-  }, [hookApi.data]);
+  const categoriesData  = useCategories();
+  const {data,loading} = categoriesData.categories;
 
   return (
     <main className={style.main}>
-      {data.length === 0 ? (
+      {loading ? (
         <Spinner />
       ) : (
         <>
