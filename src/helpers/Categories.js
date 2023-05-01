@@ -1,3 +1,5 @@
+import { errorMessageCatch } from "../error/errorMessage";
+
 export const getCategories = async (pageCategory) => {
   const numbers = [];
   for (let i = 1; i <= 5; i++) {
@@ -27,8 +29,12 @@ export const getFilter = async (urlReq) => {
   const url = `https://api.escuelajs.co/api/v1/products/?${
     urlReq + "&offset=0&limit=20"
   }`;
-
   const resp = await fetch(url);
-  const data = await resp.json();
-  return data;
+  if (resp !== "200") {
+    errorMessageCatch.errorMessage =
+      "La url a la que desea ingresar no existe.";
+  } else {
+    const data = await resp.json();
+    return data;
+  }
 };

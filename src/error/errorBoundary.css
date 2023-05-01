@@ -1,0 +1,19 @@
+.errorContainer {
+  background: #d6d0c759;
+}
+
+p {
+  font-size: 2em;
+  width: 250px;
+  font-weight: 700;
+  position: absolute;
+  top: 250px;
+  left: 40px;
+}
+
+@media (min-width: 520px) {
+  p {
+    width: 350px;
+    left: 150px;
+  }
+}

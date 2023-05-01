@@ -20,7 +20,6 @@ export const Input = ({ name }) => {
   useCategories({ check, categoryId: categories[name] });
 
   useEffect(() => {
-    console.log(name);
     if (params.search.includes(`categoryId=${categories[name]}`)) {
       setIsChecked(true);
     } else {
@@ -34,8 +33,9 @@ export const Input = ({ name }) => {
 
   return (
     <div className={style.checkbox}>
-      <p>{name}</p>
+      <label htmlFor={name}>{name}</label>
       <input
+        id={name}
         onChange={changeCheck}
         name="options"
         checked={isChecked}
