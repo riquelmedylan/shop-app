@@ -1,34 +1,34 @@
-.dropdown{
-    color: white;
-    height: 0;
-    min-height: 40px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid white;
-    display: flex;
-    flex-direction: column;
-    row-gap: 10px;
-    transition: height 0.5s ease;
-    overflow: hidden;
+.dropdown {
+  color: white;
+  height: 0;
+  min-height: 40px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  transition: height 0.5s ease;
+  overflow: hidden;
 }
 
-.header{
-    display: flex;
-    justify-content: space-between;
+.header {
+  display: flex;
+  justify-content: space-between;
 }
 
-.show{
-    height: 250px;
+.show {
+  height: 250px;
 }
 
-.pick{
-    display: flex;
-    flex-direction: column;
-    row-gap: 20px;
+.pick {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
 }
 
-.checkbox{
-    display: flex;
-    justify-content: space-between;
-    padding: 0 10px;
-    accent-color: #ffba08;
+.checkbox {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+  accent-color: #ffba08;
 }

@@ -1,18 +1,27 @@
 import style from "@/styles/modules/categories/categoriesPage.module.css";
-import { lazy, useState } from "react";
-import { Card } from "../../components/Card";
-import { getCategories } from "../../helpers/Categories";
-import { useApi } from "../../hooks/useApi";
-import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
 import useCategories from "../../hooks/useCategories";
+import { lazy, useEffect } from "react";
+import { Card } from "../../components/Card";
+import { useLocation } from "react-router-dom";
 
 const Spinner = lazy(() => import("@/components/Spinner"));
 const Filters = lazy(() => import("@/components/categories/Filters"));
 
 export default function CategoriesPage() {
-  const categoriesData  = useCategories();
-  const {data,loading} = categoriesData.categories;
+  const { changeCategory, categories } = useCategories();
+  const params = useLocation();
+  const { data, loading } = categories;
+
+  useEffect(() => {
+    if (params.search.includes("price")) {
+      changeCategory();
+      return;
+    }
+    if (params.search) {
+      changeCategory();
+      return;
+    }
+  }, [params]);
 
   return (
     <main className={style.main}>
@@ -22,11 +31,9 @@ export default function CategoriesPage() {
         <>
           <Filters />
           <div className={style.containerCards}>
-            {data.map((categories) =>
-              categories?.data.map((product, id) => (
-                <Card key={id} product={product} />
-              ))
-            )}
+            {data.map((product, id) => (
+              <Card key={id} product={product} />
+            ))}
           </div>
         </>
       )}

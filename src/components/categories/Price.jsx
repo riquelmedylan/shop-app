@@ -1,41 +1,25 @@
 import style from "@/styles/modules/categories/price.module.css";
 import { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation} from "react-router-dom";
+import { usePriceUrl } from "./effects/usePriceUrl";
+
 export const Price = () => {
   const params = useLocation();
-  const navigate = useNavigate();
   const [price, setPrice] = useState(0);
-
-  const getPriceUrl = () => {
-    const param = new URLSearchParams(location.search);
-    params.search && setPrice(param.get("price"));
-  };
 
   useEffect(() => {
     getPriceUrl();
-    let time;
-    if (price > 0) {
-      time = setTimeout(() => {
-        if (params.search.includes("price")) {
-          const newUrl = params.search.replace(/price=\d+/, "price=" + price);
-          navigate(newUrl);
-          return;
-        }
-        if (params.search) {
-          navigate(`${params.pathname}${params.search}?price=${price}&1000`);
-          return;
-        }
-        navigate(`${params.pathname}?price=${price}&1000`);
-      }, 1000);
-    }
+  }, []);
 
-    return () => {
-      clearTimeout(time);
-    };
-  }, [price]);
+  usePriceUrl({price: price})
 
   const changePrice = (e) => {
     setPrice(e.target.value);
+  };
+
+  const getPriceUrl = () => {
+    const param = new URLSearchParams(location.search);
+    params.search.includes("price_min") && setPrice(param.get("price_min"));
   };
 
   return (
@@ -45,7 +29,7 @@ export const Price = () => {
         <p>${price}</p>
       </div>
       <input
-        onInput={changePrice}
+        onChange={changePrice}
         type="range"
         min="0"
         max="1000"

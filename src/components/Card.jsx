@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 export const Card = ({ product }) => {
   const { price, images, category, description, id,title } = product;
-  console.log(product)
   return (
     <div className={style.card}>
       <header className={style.cardImage}>
