@@ -16,6 +16,7 @@ export const Router = createBrowserRouter([
         <Layout />
       </Suspense>
     ),
+    errorElement: <ErrorBoundary />,
     children: [
       {
         index: true,
@@ -27,7 +28,6 @@ export const Router = createBrowserRouter([
       },
       {
         path: "/categories",
-          errorElement: <ErrorBoundary />,
         element: (
           <CategoriesProvider>
             <CategoriesPage />

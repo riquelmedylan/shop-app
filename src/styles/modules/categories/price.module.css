@@ -5,11 +5,20 @@
   row-gap: 15px;
 }
 
-.price{
-    display: flex;
-    column-gap: 5px;
+.price {
+  display: flex;
+  column-gap: 5px;
 }
 
 input {
   accent-color: #ffba08;
+}
+
+@media (min-width: 620px) {
+  .containerPrice {
+    color: black;
+    display: flex;
+    flex-direction: row;
+    column-gap: 15px;
+  }
 }

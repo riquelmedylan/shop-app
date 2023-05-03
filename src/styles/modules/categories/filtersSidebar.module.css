@@ -29,7 +29,6 @@
   transform: translateX(0%);
 }
 
-
 .sidebar a {
   font-size: 24px;
   text-decoration: none;
@@ -47,6 +46,12 @@
   z-index: 20;
 }
 
-.title{
+.title {
   color: white;
+}
+@media (min-width: 690px) {
+  .sidebar,
+  .opacity {
+    display: none;
+  }
 }

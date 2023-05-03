@@ -15,6 +15,7 @@ const getCategory = async (numbers, pageCategory) => {
   for (const number of numbers) {
     const url = `https://api.escuelajs.co/api/v1/categories/${number}/products?offset=0&limit=20`;
     const resp = await fetch(url);
+    errorFetch(resp, "La url a la que desea ingresar no existe.");
     const dataResp = await resp.json();
     if (pageCategory) {
       data.push(dataResp);
@@ -30,11 +31,14 @@ export const getFilter = async (urlReq) => {
     urlReq + "&offset=0&limit=20"
   }`;
   const resp = await fetch(url);
-  if (resp !== "200") {
-    errorMessageCatch.errorMessage =
-      "La url a la que desea ingresar no existe.";
-  } else {
-    const data = await resp.json();
-    return data;
-  }
+  errorFetch(resp, "La url a la que desea ingresar no existe.");
+  const data = await resp.json();
+  return data;
 };
+
+export function errorFetch(resp, message) {
+  if (resp !== "200") {
+    errorMessageCatch.errorMessage = message;
+    return;
+  }
+}
