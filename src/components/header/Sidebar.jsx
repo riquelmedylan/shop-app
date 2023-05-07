@@ -23,7 +23,9 @@ export default function Sidebar({ show, setShow }) {
         <Link onClick={unmountSidebar} to="/categories">
           Categories
         </Link>
-        <Link>Products</Link>
+        <Link onClick={unmountSidebar} to="/cart">
+          Cart
+        </Link>
         <Link>Log In</Link>
         <Link>Sign In</Link>
       </aside>

@@ -7,6 +7,7 @@ const Home = lazy(() => import("../pages/Home"));
 const Layout = lazy(() => import("../components/Layout"));
 const Product = lazy(() => import("../pages/product/Product"));
 const CategoriesPage = lazy(() => import("../pages/categories/Categories"));
+const Cart = lazy(() => import("../pages/cart/Cart"));
 
 export const Router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ export const Router = createBrowserRouter([
             <CategoriesPage />
           </CategoriesProvider>
         ),
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
     ],
   },
