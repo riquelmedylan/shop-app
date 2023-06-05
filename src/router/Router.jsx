@@ -3,11 +3,13 @@ import { createBrowserRouter } from "react-router-dom";
 import Spinner from "../components/Spinner";
 import { CategoriesProvider } from "../context/CategoriesProvider";
 import { ErrorBoundary } from "../error/ErrorBoundary";
+
 const Home = lazy(() => import("../pages/Home"));
 const Layout = lazy(() => import("../components/Layout"));
 const Product = lazy(() => import("../pages/product/Product"));
 const CategoriesPage = lazy(() => import("../pages/categories/Categories"));
 const Cart = lazy(() => import("../pages/cart/Cart"));
+const Register = lazy(() => import("../pages/auth/Register"));
 
 export const Router = createBrowserRouter([
   {
@@ -40,5 +42,9 @@ export const Router = createBrowserRouter([
         element: <Cart />,
       },
     ],
+  },
+  {
+    path: "/sign-up",
+    element: <Register />,
   },
 ]);
