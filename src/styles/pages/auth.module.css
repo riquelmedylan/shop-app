@@ -42,7 +42,7 @@ label {
   margin-bottom: 5px;
 }
 
-input {
+.input {
   border: 2px solid #000000;
   border-radius: 4px;
   font-size: 16px;
@@ -51,7 +51,7 @@ input {
   background-color: transparent;
 }
 
-input:focus {
+.input:focus {
   outline: none;
   border-color: #ffba08;
 }
@@ -79,7 +79,7 @@ input:focus {
 }
 
 @media (max-width: 480px) {
-  input,
+  .input,
   .button {
     font-size: 14px;
   }

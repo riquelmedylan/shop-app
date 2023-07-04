@@ -1,7 +1,19 @@
 import style from "@/styles/modules/card.module.css";
+import useAlert from "../hooks/useAlert";
 
 export const Card = ({ product }) => {
   const { price, images, category, description, id, title } = product;
+  const { alert, setAlert } = useAlert();
+
+  const callAlert = () => {
+    setAlert({
+      message: `Product ${title} added successfully`,
+      show: true,
+      icon:"succefull"
+    });
+    console.log(alert)
+  };
+
   return (
     <div className={style.card}>
       <header className={style.cardImage}>
@@ -17,7 +29,7 @@ export const Card = ({ product }) => {
       </div>
       <footer className={style.cardFooter}>
         <span className={style.price}>${price}</span>
-        <button className={style.btnBuy}>Buy</button>
+        <button onClick={callAlert} className={style.btnBuy}>Buy</button>
       </footer>
     </div>
   );

@@ -45,6 +45,10 @@ export const Router = createBrowserRouter([
   },
   {
     path: "/sign-up",
-    element: <Register />,
+    element: (
+      <Suspense fallback={<Spinner complete={true} />}>
+        <Register />
+      </Suspense>
+    ),
   },
 ]);

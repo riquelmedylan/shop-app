@@ -20,7 +20,7 @@ export default function Navbar() {
         <Link to="/categories">Categories</Link>
         <Link>Products</Link>
         <Link>Log In</Link>
-        <Link>Sign In</Link>
+        <Link to="/sign-up">Sign Up</Link>
       </div>
       <IconMenu
         className={style.sidebar}
